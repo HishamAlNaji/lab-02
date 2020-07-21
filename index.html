@@ -7,6 +7,17 @@
     <title>The Gallery of Horns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script id="mustache-template" type='text/x-tmpl-mustache'>
+        <section class="{{keyword}}">
+            <h2>{{title}}</h2>
+            <!--title-->
+            <img src="{{image_url}}" alt="">
+            <!--image-->
+            <p>{{description}}</p>
+            <!--description-->
+        </section>
+    </script>
+    <script src="https://unpkg.com/mustache@latest"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
 </head>
@@ -14,16 +25,24 @@
 <body>
     <header>
         <h1>The Gallery of Horns</h1>
-        <select>
+        <select id="filter">
         <option value="default">Filter by Keyword</option>
       </select>
+        <select id="sort">
+        <option value="default">Sort By</option>
+        <option>title</option>
+        <option>horns</option>
+      </select>
+        <nav>
+            <button id="page1" class="hvr-rectangle-out">Page 1</button> <button id="page2" class="hvr-rectangle-out">Page 2</button>
+        </nav>
     </header>
     <main>
-        <section id="photo-template" class="remove">
+        <!-- <section id="photo-template" class="remove">
             <h2></h2>
             <img src="" alt="">
             <p></p>
-        </section>
+        </section> -->
     </main>
     <footer>
         &copy; 2018 Code Fellows
